@@ -105,8 +105,10 @@ public class CpuCodeUtil {
              * */
             String str=CpuCodeUtil.executeLinuxCmd("sudo dmidecode -t 4");
             str=str.replaceAll("\\s*","");
-            str=str.substring(str.indexOf("ID:")+3,str.indexOf("ID:")+16);
-            System.out.println("|--Linux:"+str);  //.replaceAll("\\s*","")
+            //System.out.println("|--debug0:"+str);
+            //System.out.println("|--debug1:"+str.substring(str.indexOf("ID:"),str.indexOf("ID:")+19));
+            str=str.substring(str.indexOf("ID:")+3,str.indexOf("ID:")+19);
+            System.out.println("|--Linux:"+str);                              //.replaceAll("\\s*","")
             return str;
         }
     }
